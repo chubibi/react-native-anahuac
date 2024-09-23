@@ -1,0 +1,2 @@
+
+npx expo install --fix

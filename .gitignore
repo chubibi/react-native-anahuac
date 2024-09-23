@@ -34,8 +34,12 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
+%ProgramData%
 .vs/
 .vscode/
+obj
+bin
+
 android/
 ios/
-variables.ts
+eas.json

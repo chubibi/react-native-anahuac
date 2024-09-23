@@ -1,24 +1,24 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { Router } from './app/routes/Router';
+import { Router } from '@/app/routes/Router';
+import { useAppearance } from '@/app/hooks/useAppearance';
+import Toast from 'react-native-toast-message';
+import { toastConfig } from '@/app/components/Toast';
 
 export default function App() {
+  const { isDarkMode } = useAppearance()
+
   return (
-    <GestureHandlerRootView>
-      <NavigationContainer>
-        <Router/>
-      </NavigationContainer>
-    </GestureHandlerRootView>
+    <NavigationContainer>
+      <GestureHandlerRootView>
+        <StatusBar
+          style={!isDarkMode ? "dark" : "light"}
+          backgroundColor="transparent" />
+        <Router />
+      </GestureHandlerRootView>
+      <Toast config={toastConfig} />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
