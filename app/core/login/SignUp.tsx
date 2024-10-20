@@ -45,8 +45,8 @@ export function SignUp() {
 					placeholderTextColor="gray"
 				/>
 
-				<Pressable className={btnBase}>
-					<CustomLinearGradient>
+				{/* <Pressable className={btnBase}>
+					<CustomLinearGradient colors={}>
 						{!isSending
 							? <LoaderBtn />
 							: <>
@@ -54,7 +54,7 @@ export function SignUp() {
 								<Text className={txtBtnBase}>Enviar Datos</Text>
 							</>}
 					</CustomLinearGradient>
-				</Pressable>
+				</Pressable> */}
 			</View>
 		</AvoiderKeyboard>
 	</View>
